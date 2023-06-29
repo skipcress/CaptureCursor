@@ -11,7 +11,7 @@ fi
 function move_cursor() {
 	echo "Checking if cursor is in primary screen bounds..."
 	if [ "$CX" -gt "$X" ] || [ "$CY" -gt "$Y" ] || [ "$CX" -lt 0 ] || [ "$CY" -lt 0 ]; then
-		cliclick m:$((X / 2)),$((Y / 2))
+		cliclick m:$((X / 2)),$((Y / 2)) p
 		echo "Cursor moved to: x=$((X / 2)), y=$((Y / 2))"
 	else
 		echo "Cursor is within bounds, no action taken."
