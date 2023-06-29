@@ -79,6 +79,8 @@ echo -e "\n\033[32mEnter the password to your machine when prompted...\033[32m"
 echo -e "\n\033[32mCopying base script...\033[32m\n"
 sudo cp ~/Documents/CaptureCursor/CaptureCursor/MacOS/CaptureCursor.sh /usr/local/bin
 exit_on_fail
+sudo chmod +x /usr/local/bin/CaptureCursor.sh
+exit_on_fail
 echo -e "\033[32mCopying compiled application...\033[32m\n"
 sudo cp -R ~/Documents/CaptureCursor/CaptureCursor.app /Applications/
 exit_on_fail
