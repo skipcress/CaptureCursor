@@ -9,6 +9,6 @@ sudo chmod +x ~/Downloads/Install_CaptureCursor.sh
 4. Copy the following command and paste it into your teminal window, hit Enter, and follow the prompts:
 ~/Downloads/Install_CaptureCursor.sh
 
-Currently only supported on MacOS.
+Currently only supported on MacOS. The installation script has yet to be tested, so there are bound to be bugs. Feel free to let me know what you run into, but I will likely fix them anyway as I have an opportunity to test it.
 
 Once CaptureCursor is installed, you can find it by launching Launchpad, just like most other applications. You can also pin it to your Dock.
