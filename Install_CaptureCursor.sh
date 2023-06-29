@@ -47,7 +47,6 @@ echo "\n\033[32mChecking if Homebrew is installed...\033[0m\n"
 which -s brew > /dev/null
 if [[ $? != 0 ]]; then
 	# Install Homebrew
- 	echo "\033[32mInstalling Homebrew...\033[0m\n"
  	escalate_privilages
 	install_homebrew
 	exit_on_fail
