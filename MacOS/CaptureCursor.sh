@@ -2,7 +2,7 @@
 
 # Checks if process is already running
 processCount=$(ps -ef | grep 'CaptureCursor.sh' | wc -l)
-if [ $processCount -gt 4 ]; then
+if [ $((processCount)) -gt 3 ]; then
 	exit 0;
 fi
 
