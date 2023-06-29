@@ -38,11 +38,6 @@ echo "\033[32m##################################################################
 #	echo "\n\033[32mXCode already installed.\033[0m\n"
 #fi
 
-# Install git
-echo "\n\033[32mInstalling git (if not already installed)\nFollow prompts to install software.\033[0m\n"
-git --version
-exit_on_fail
-
 echo "\n\033[32mChecking if Homebrew is installed...\033[0m\n"
 which -s brew > /dev/null
 if [[ $? != 0 ]]; then
@@ -56,6 +51,11 @@ else
 	brew update
 	exit_on_fail
 fi
+
+# Install git
+echo "\n\033[32mInstalling git (if not already installed)\nFollow prompts to install software.\033[0m\n"
+git --version
+exit_on_fail
 
 # Install CLIClick
 echo "\033[32mInstalling or updating cliclick...\033[0m\n"
