@@ -10,9 +10,11 @@ function exit_on_fail() {
 }
 
 # Function installs Homebrew
-function install_brew() {
-	echo -e "\033[32mInstalling Homebrew...exit\033[32m\n"
-	ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+function install_brew() {	
+	echo -e "\033[32mInstalling Homebrew...\033[32m\n"
+ 	echo -e "\n\033[32mEnter the password to your computer when prompted...\033[32m"
+  	sudo echo > /dev/null
+  	NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 }
 
 # 1. Install dependencies
@@ -75,7 +77,7 @@ echo -e "\n\033[32#######################################\033[32m"
 echo -e "\033[32m##### Installing the Application #####\033[32m"
 echo -e "\033[32m######################################\033[32m\n"
 
-echo -e "\n\033[32mEnter the password to your machine when prompted...\033[32m"
+echo -e "\n\033[32mEnter the password to your computer if prompted...\033[32m"
 echo -e "\n\033[32mCopying base script...\033[32m\n"
 sudo cp ~/Documents/CaptureCursor/CaptureCursor/MacOS/CaptureCursor.sh /usr/local/bin
 exit_on_fail
