@@ -86,12 +86,13 @@ escalate_privilages
 echo -e "\n\033[32mCopying base script...\033[32m\n"
 sudo cp ~/Documents/CaptureCursor/CaptureCursor/MacOS/CaptureCursor.sh /usr/local/bin
 exit_on_fail
+echo -e "\n\033[32mMaking base script executable...\033[32m\n"
 sudo chmod +x /usr/local/bin/CaptureCursor.sh
 exit_on_fail
-echo -e "\033[32mCopying compiled application...\033[32m\n"
+echo -e "\n\033[32mCopying compiled application...\033[32m\n"
 sudo cp -R ~/Documents/CaptureCursor/CaptureCursor.app /Applications/
 exit_on_fail
-echo -e "\033[32mCopying new icon to Resources directory...\033[32m\n"
+echo -e "\n\033[32mCopying new icon to Resources directory...\033[32m\n"
 sudo cp ~/Documents/CaptureCursor/CaptureCursor/MacOS/CaptureCursor.icns /Applications/CaptureCursor.app/Contents/Resources/applet.icns
 exit_on_fail
 
@@ -100,6 +101,7 @@ echo -e "\n\033[32m#######################################\033[32m"
 echo -e "\033[32m##### Cleaning up Temporary Files #####\033[32m"
 echo -e "\033[32m#######################################\033[32m\n"
 
+echo -e "\n\033[32mDeleting temp folder (any failures at this stage will not effect the running of the application)...\033[32m\n"
 rm -rf ~/Documents/CaptureCursor
 
 # All operations complete
