@@ -26,24 +26,24 @@ echo "\n\033[32m################################################################
 echo "\033[32m##### Installing software dependencies (this may take some time)... #####\033[0m"
 echo "\033[32m#########################################################################\033[0m\n"
 
-# Install XCode
-echo "\n\033[32mChecking if XCode Command Line Developer Tools are installed...\033[0m"
-xcode-select -p > /dev/null
-if [[ $? -gt 0 ]]; then
-	echo "\n\033[32mXCode not installed; installing XCode...\033[0m\n"
-	echo "\033[32mPress the 'Install' button, then agree to the ULA to complete this installation.\033[0m\n"
- 	xcode-select --install
-	exit_on_fail
-else
-	echo "\n\033[32mXCode already installed.\033[0m\n"
-fi
+## Install XCode
+#echo "\n\033[32mChecking if XCode Command Line Developer Tools are installed...\033[0m"
+#xcode-select -p > /dev/null
+#if [[ $? -gt 0 ]]; then
+#	echo "\n\033[32mXCode not installed; installing XCode...\033[0m\n"
+#	echo "\033[32mPress the 'Install' button, then agree to the ULA to complete this installation.\033[0m\n"
+# 	xcode-select --install
+#	exit_on_fail
+#else
+#	echo "\n\033[32mXCode already installed.\033[0m\n"
+#fi
 
 # Install git
 echo "\n\033[32mInstalling git (if not already installed)\nFollow prompts to install software.\033[0m\n"
 git --version
 exit_on_fail
 
-which -s brew
+which -s brew > /dev/null
 if [[ $? != 0 ]]; then
 	# Install Homebrew
  	escalate_privilages
