@@ -81,7 +81,7 @@ echo "\n\033[32m########################################\033[0m"
 echo "\033[32m##### Compiling the Application... #####\033[0m"
 echo "\033[32m########################################\033[0m\n"
 
-osacompile -o ~/Documents/CaptureCursor.app ~/Documents/CaptureCursor/CaptureCursor/MacOS/CaptureCursor.applescript
+osacompile -o ~/Documents/CaptureCursor/CaptureCursor.app ~/Documents/CaptureCursor/CaptureCursor/MacOS/CaptureCursor.applescript
 exit_on_fail
 
 # 4. Install application
