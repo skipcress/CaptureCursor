@@ -58,6 +58,6 @@ do
 	
 	echo ""
 	((counter++))
-	echo -e "$(pad $counter): Sleeping for $sleepSecs second(s) - \033[32mPress CTRL+C to exit\033[0m"
+	echo "$(pad $counter): Sleeping for $sleepSecs second(s) - \033[32mPress CTRL+C to exit\033[0m"
 	sleep $sleepSecs
 done
