@@ -53,7 +53,7 @@ if [[ $? != 0 ]]; then
 else
 	# Update Homebrew
 	echo "\033[32mUpdating Homebrew...\033[0m\n"
-	brew update
+	brew update --debug --verbose
 	exit_on_fail
 fi
 
