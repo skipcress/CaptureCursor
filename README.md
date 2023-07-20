@@ -1,5 +1,5 @@
 # CaptureCursor
-A MacOS application intended to be run in conjunction with ProPresenter, which will restore the cursor to the center of the screen if the user moves the cursor to one of the display screens.
+A MacOS application intended to be run in conjunction with ProPresenter, which will move the cursor to the nearest screen edge.
 
 To install:
 1. Download the file "Install_CaptureCursor.sh" to your Downloads directory
@@ -11,3 +11,8 @@ To install:
 Currently only supported on MacOS.
 
 Once CaptureCursor is installed, you can find it by launching Launchpad, just like most other applications. You can also pin it to your Dock.
+
+# TROUBLESHOOTING
+
+1. <b>Update Homebrew is failing</b><br>On older versions of MacOS where Homebrew (and Apple) no longer support the OS, updating Homebrew may fail. Provided Homebrew is installed on the machine, you can simply comment out line 56 of Install_CaptureCursor.sh by adding a hash (#) before the line as such:<br><br>\# brew update --debug --verbose<br><br>
+2. <b>Cursor is still allowed to leave the bounds of the primary display</b><br>If the screen resolution detected by the script is incorrect, the cursor will not be properly retained. You can confirm this by checking the reported resolution detected by the script in the terminal output. To correct this, you can hardcode these values in CaptureCursor.sh (which is located at /usr/local/bin/CaptureCursor.sh). Note: this file is owned by admin, you will need to use escalated permissions to edit the file. To hardcode the screen resolution, first comment out lines 34 and 37 by adding a hash (#) before each line as such:<br><br>\# X=$(system_profiler SPDisplaysDataType | grep Resolution | awk 'NR==1{print $2;}')<br>\# Y=$(system_profiler SPDisplaysDataType | grep Resolution | awk 'NR==1{print $4;}')<br><br>...next, just after line 37 add the following lines, where [X RESOLUTION] and [Y RESOLUTION] are the actual dimensions of your monitor:<br><br>X=[X RESOLUTION]<br>Y=[Y RESOLUTION]
