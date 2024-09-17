@@ -48,7 +48,7 @@ which -s brew > /dev/null
 if [[ $? != 0 ]]; then
 	# Install Homebrew
  	escalate_privilages
-	install_homebrew
+	install_brew
 	exit_on_fail
 else
 	# Update Homebrew
@@ -59,12 +59,12 @@ fi
 
 # Install git
 echo "\n\033[32mInstalling git (if not already installed)\nFollow prompts to install software.\033[0m\n"
-brew install git
+/opt/homebrew/bin/brew install git
 exit_on_fail
 
 # Install CLIClick
 echo "\033[32mInstalling or updating cliclick...\033[0m\n"
-brew install cliclick
+/opt/homebrew/bin/brew install cliclick
 exit_on_fail
 
 # 2. Copying files
