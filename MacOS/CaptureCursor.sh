@@ -49,8 +49,8 @@ echo "Beginning cursor position monitoring; PRESS CTRL+C TO EXIT"
 # Infinite loop gets current cursor location, and passes it to move_cursor()
 while true 
 do
-	CX=$(cliclick p | awk 'BEGIN { FS = "," }; {print $1}')
-	CY=$(cliclick p | awk 'BEGIN { FS = "," }; {print $2}')
+	CX=$(/opt/homebrew/bin/cliclick p | awk 'BEGIN { FS = "," }; {print $1}')
+	CY=$(/opt/homebrew/bin/cliclick p | awk 'BEGIN { FS = "," }; {print $2}')
 	move_cursor $CX $CY $X $Y
 	
 	sleep $sleepSecs
